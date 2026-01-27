@@ -2,17 +2,24 @@ package com.ceste.timetrack.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class ClockIn {
     @Id
     private int id;
 
-    @Column
-    private int id_employee;
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_employee", nullable = false)
+    private Employee employee;
 
     @Column(name = "check_in")
     private Date checkIn;
@@ -34,12 +41,12 @@ public class ClockIn {
         this.id = id;
     }
 
-    public int getId_employee() {
-        return id_employee;
+    public Employee getEmployee() {
+        return employee;
     }
 
-    public void setId_employee(int id_employee) {
-        this.id_employee = id_employee;
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public Date getCheckIn() {
