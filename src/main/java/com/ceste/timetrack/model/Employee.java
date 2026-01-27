@@ -1,4 +1,4 @@
-package com.ceste.model;
+package com.ceste.timetrack.model;
 
 import java.util.Date;
 

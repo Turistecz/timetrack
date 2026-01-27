@@ -1,4 +1,4 @@
-package com.ceste.model;
+package com.ceste.timetrack.model;
 
 public enum EnumRol
 {
