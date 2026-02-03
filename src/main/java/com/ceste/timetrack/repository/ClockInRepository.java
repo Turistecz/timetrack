@@ -11,6 +11,9 @@ import com.ceste.timetrack.model.ClockIn;
 @Repository
 public interface ClockInRepository extends JpaRepository<ClockIn, Integer> {
     
+    /*
+        Las triples comillas se utilizan para poder poner multilinea en Java.
+    */
     @Query("""
         SELECT COUNT(c) > 0 
         FROM clock_in c 
