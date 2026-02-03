@@ -11,6 +11,17 @@ import com.ceste.timetrack.model.ClockIn;
 @Repository
 public interface ClockInRepository extends JpaRepository<ClockIn, Integer> {
     
-    @Query("SELECT opened FROM clock_in WHERE check_in = CAST(?2 AS DATE) AND id_employee = ?1")
-    boolean comprobarCheckIn(int idEmployee, LocalDateTime date);
+    @Query("""
+        SELECT COUNT(c) > 0 
+        FROM clock_in c 
+        WHERE check_in >= ?2 AND check_in < ?3 AND id_employee = ?1
+    """)
+    boolean comprobarCheckIn(int idEmployee, LocalDateTime start, LocalDateTime end);
+
+    @Query("""
+        SELECT c
+        FROM clock_in c 
+        WHERE check_in >= ?2 AND check_in < ?3 AND id_employee = ?1
+    """)
+    ClockIn obtenerCheckIn(int idEmployee, LocalDateTime start, LocalDateTime end);
 }

@@ -1,9 +1,11 @@
 package com.ceste.timetrack.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceste.timetrack.dto.CheckInRequestDTO;
+import com.ceste.timetrack.dto.CheckInResponseDTO;
 import com.ceste.timetrack.service.ClockInService;
 import com.ceste.timetrack.service.EmployeeService;
 
@@ -28,8 +30,7 @@ public class ClockInController {
 
 
     @PostMapping("/checkIn")
-    public CheckInRequestDTO checkIn(@Valid @RequestBody CheckInRequestDTO req){
-        this.clockInService.checkIn(req);
-        return req;
+    public ResponseEntity<CheckInResponseDTO> checkIn(@Valid @RequestBody CheckInRequestDTO req){
+        return this.clockInService.checkIn(req);
     }
 }
