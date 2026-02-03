@@ -1,7 +1,6 @@
 package com.ceste.timetrack.model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -26,7 +25,7 @@ public class ClockIn {
     private LocalDateTime checkIn;
 
     @Column(name = "check_out")
-    private LocalDateTime check_out;
+    private LocalDateTime  check_out;
 
     @Column
     private boolean opened;
@@ -54,11 +53,11 @@ public class ClockIn {
         return checkIn;
     }
 
-    public void setCheckIn(LocalDateTime checkIn) {
+    public void setCheckIn(LocalDateTime  checkIn) {
         this.checkIn = checkIn;
     }
 
-    public LocalDateTime getCheck_out() {
+    public LocalDateTime  getCheck_out() {
         return check_out;
     }
 

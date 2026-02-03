@@ -2,15 +2,17 @@ package com.ceste.timetrack.dto;
 
 import jakarta.validation.constraints.NotNull;
 
-public class CheckInRequestDTO{
-    @NotNull(message = "El id de empleado es obligatorio.")
-    private int idEmployee;
+public class CheckInRequestDTO {
 
-    public int getIdEmployee() {
-        return idEmployee;
+    @NotNull(message=" El id Empleado no puede ser nulo")
+    private int idEmpleado;
+
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
+
 }

@@ -7,7 +7,7 @@ import com.ceste.timetrack.service.EmployeeService;
 
 @RestController
 public class EmployeeController {
-    
+
     @Autowired
     private EmployeeService employeeService;
 }

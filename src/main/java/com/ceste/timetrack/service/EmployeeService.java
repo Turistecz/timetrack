@@ -7,7 +7,7 @@ import com.ceste.timetrack.repository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
-    
+
     @Autowired
     private EmployeeRepository employeeRepository;
 }
