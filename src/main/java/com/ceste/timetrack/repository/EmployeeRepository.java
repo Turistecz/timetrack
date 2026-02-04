@@ -10,7 +10,7 @@ import com.ceste.timetrack.model.Employee;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
 
-    @Query(value= "SELECT e FROM employee e WHERE e.email = ?1 AND e.password = ?2", nativeQuery=true)
+    @Query(value= "SELECT * FROM employee e WHERE e.email = ?1 AND e.password = ?2", nativeQuery=true)
     Employee findByEmailAndPassword(String email, String password);
 
 }
