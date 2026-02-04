@@ -7,7 +7,7 @@ public class GetUserByIdResponseDTO {
   private String name;
   private String email;
   private String password;
-  private Enum<EnumRol> rol;
+  private EnumRol rol;
   private boolean active;
 
   public int getIdEmployee() {
@@ -34,10 +34,10 @@ public class GetUserByIdResponseDTO {
   public void setPassword(String password) {
     this.password = password;
   }
-  public Enum<EnumRol> getRol() {
+  public EnumRol getRol() {
     return rol;
   }
-  public void setRol(Enum<EnumRol> rol) {
+  public void setRol(EnumRol rol) {
     this.rol = rol;
   }
   public boolean isActive() {
