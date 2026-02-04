@@ -14,17 +14,15 @@ public interface ClockInRepository extends JpaRepository<ClockIn, Integer> {
     /*
         Las triples comillas se utilizan para poder poner multilinea en Java.
     */
-    @Query("""
-        SELECT COUNT(c) > 0 
-        FROM clock_in c 
-        WHERE check_in >= ?2 AND check_in < ?3 AND id_employee = ?1
-    """)
+    @Query(value="""
+        SELECT COUNT(c) > 0 FROM clock_in c 
+        WHERE check_in >= ?2 AND check_in < ?3 
+        AND id_employee = ?1""", nativeQuery=true)
     boolean comprobarCheckIn(int idEmployee, LocalDateTime start, LocalDateTime end);
 
-    @Query("""
+    @Query(value="""
         SELECT c
         FROM clock_in c 
-        WHERE check_in >= ?2 AND check_in < ?3 AND id_employee = ?1
-    """)
+        WHERE check_in >= ?2 AND check_in < ?3 AND id_employee = ?1""", nativeQuery=true)
     ClockIn obtenerCheckIn(int idEmployee, LocalDateTime start, LocalDateTime end);
 }
