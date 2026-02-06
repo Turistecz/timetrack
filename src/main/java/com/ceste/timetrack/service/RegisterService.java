@@ -1,12 +1,10 @@
 package com.ceste.timetrack.service;
 
 import java.time.LocalDateTime;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 import com.ceste.timetrack.dto.RegisterRequestDTO;
 import com.ceste.timetrack.model.Employee;
 import com.ceste.timetrack.model.EnumRol;
