@@ -1,6 +1,6 @@
 package com.ceste.timetrack.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,8 +33,8 @@ public class Employee {
     @Column
     private boolean active;
 
-    @Column
-    private Date created_at;
+    @Column(name="created_at")
+    private LocalDateTime created_at;
 
     public int getId() {
         return id;
@@ -84,11 +84,11 @@ public class Employee {
         this.active = active;
     }
 
-    public Date getCreated_at() {
+    public LocalDateTime getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
+    public void setCreated_at(LocalDateTime created_at) {
         this.created_at = created_at;
     }
 }
